@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TheRustyCauldron_PFG.Models.Order>
+
+@{
+    ViewBag.Title = "My Orders";
+}
+
+<h2>My Orders</h2>
+
+@if (Model != null && Model.Any())
+{
+
+<table class="table table-parchment">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Potion.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+{
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Potion.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "OrderDetails", new { id = item.OrderId }, new { @class = "btn btn-primary btn-sm" })
+                </td>
+            </tr>
+}
+    </tbody>
+</table>
+}
+else
+{
+    <p>You haven't placed any orders yet.</p>
+    <p>Return to the @Html.ActionLink("Cauldron", "Index", "Cauldron") to brew some potions!</p>
+}

@@ -1,33 +1,38 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Welcome to The Rusty Cauldron"; // Changed page title
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+<main class="home-parchment-container">
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
+    <div class="row text-center mt-4">
+        <section class="col-md-4 mb-4">
+            <h2 class="section-title">Greetings, Seeker!</h2>
+            <p>Step into The Rusty Cauldron, where ancient alchemy meets modern whimsy! Discover enchanting handcrafted potions, rare ingredients, and arcane curiosities.</p>
+            <p>Each brew is steeped in lore and crafted with care, ensuring a touch of magic in every drop. Welcome, and may your visit be truly bewitching!</p>
+            <p><a href="@Url.Action("Index", "Ingredients")" class="btn btn-primary btn-lg">Explore Our Wares &raquo;</a></p>
+        </section>
+
+        <section class="col-md-4 mb-4">
+            <h2 class="section-title">The Cauldron's Mark</h2>
+            <div class="logo-container">
+                <img src="~/Content/img/identity/logonbg.png" class="img-fluid" alt="The Rusty Cauldron Logo" />
+            </div>
+            <p class="mt-3">Embrace the magic of The Rusty Cauldron, where every potion tells a tale.</p>
+        </section>
+
+        <section class="col-md-4 mb-4">
+            <h2 class="section-title">Seek Us Out!</h2>
             <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
+                Find us amidst the swirling mists of the Whispering Woods. For inquiries or grand orders, contact us through these enchanted channels:
             </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            <p>
+                <strong>The Rusty Cauldron Alchemy Shop</strong><br />
+                Enchanted Lane, Mystical Realm<br />
+                <br />
+                <strong>Scrying Pool (Phone):</strong> +1 (555) 012-RUST<br />
+                <strong>Owl Post (Email):</strong> <a href="mailto:contact@therustycauldron.realm" class="btn btn-primary btn-sm">contact@therustycauldron.realm</a><br />
+                <strong>Hours:</strong> Sun - Fri: Sundown to Moonrise.
+            </p>
         </section>
     </div>
 </main>

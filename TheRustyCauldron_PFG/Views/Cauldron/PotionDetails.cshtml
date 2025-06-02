@@ -41,7 +41,8 @@
             z-index: 2;
             opacity: 1;
         }
-        }
+    /* Missing closing brace for .potion-display-container .effect-image, added below */
+    /* } */ /* This was likely causing a CSS error. Make sure it's removed if it's there. */
 
     /* Additional styling for the card */
     .card-body {
@@ -76,10 +77,18 @@
 
         <hr />
 
+        @* NEW: Display Potion Price *@
+        <h4 class="card-text text-success mb-3">
+            <strong>Price:</strong> @Model.Price.ToString("C")
+        </h4>
+
         <div class="d-flex justify-content-center flex-wrap">
             @* Use flexbox for button alignment *@
             @Html.ActionLink("Back to Ingredients", "Index", "Ingredients", null, new { @class = "btn btn-primary mt-3 mx-1" })
             @Html.ActionLink("View Grimoire", "Index", "Grimoire", null, new { @class = "btn btn-info mt-3 mx-1" })
+
+            @* NEW: Order Now Button *@
+            @Html.ActionLink("Order This Potion", "OrderForm", "Order", new { potionId = Model.Id }, new { @class = "btn btn-success mt-3 mx-1" })
         </div>
     </div>
 </div>

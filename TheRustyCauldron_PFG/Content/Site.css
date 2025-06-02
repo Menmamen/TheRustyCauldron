@@ -603,3 +603,309 @@ selected bottle image.
 .bottle-radio {
     display: none; /* Hide the actual radio button */
 }
+
+
+/* GLOBAL BUTTON OVERRIDES (Using !important) */
+/* This targets general Bootstrap buttons and links styled as buttons. */
+button.btn,
+a.btn,
+input[type="submit"].btn,
+input[type="button"].btn {
+    background-color: #3d2d1d !important;
+    border-color: #2d1d0d !important;
+    color: #eee8d5 !important;
+    font-family: 'Marcellus', serif !important;
+    font-size: 1.1rem !important;
+    padding: 8px 20px !important;
+    border-radius: 5px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important; /* Transition property itself doesn't need !important unless it's being overridden */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+    text-decoration: none !important;
+    display: inline-block !important; /* Ensure they behave like block elements for width/padding */
+    vertical-align: middle !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    white-space: nowrap !important;
+}
+
+    /* Hover state for all .btn elements */
+    button.btn:hover,
+    a.btn:hover,
+    input[type="submit"].btn:hover,
+    input[type="button"].btn:hover {
+        background-color: #5a4b3d !important;
+        border-color: #3d2d1d !important;
+        color: #fff !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4) !important;
+        text-decoration: none !important;
+    }
+
+    /* Active/Click state for all .btn elements */
+    button.btn:active,
+    a.btn:active,
+    input[type="submit"].btn:active,
+    input[type="button"].btn:active {
+        background-color: #2d1d0d !important;
+        border-color: #1d0d00 !important;
+        transform: translateY(0) !important;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) !important;
+    }
+
+/* Specific overrides for Bootstrap's built-in button colors */
+/* These will ensure your btn-primary, btn-danger, etc., keep their intended colors */
+.btn-primary {
+    background-color: #3d2d1d !important;
+    border-color: #2d1d0d !important;
+    color: #eee8d5 !important;
+}
+
+    .btn-primary:hover {
+        background-color: #5a4b3d !important;
+        border-color: #3d2d1d !important;
+        color: #fff !important;
+    }
+
+.btn-danger {
+    background-color: #dc3545 !important;
+    border-color: #c82333 !important;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333 !important;
+        border-color: #bd2130 !important;
+    }
+
+.btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+    .btn-success:hover {
+        background-color: #218838 !important;
+        border-color: #1e7e34 !important;
+    }
+
+.btn-warning {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #3d2d1d !important; /* Changed to dark text for contrast on warning button */
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800 !important;
+        border-color: #d39e00 !important;
+        color: #3d2d1d !important;
+    }
+
+
+/* This would target any <a> tag directly inside a <dd> element */
+dd > a, p > a {
+    background-color: #3d2d1d !important;
+    border-color: #2d1d0d !important;
+    color: #eee8d5 !important;
+    font-family: 'Marcellus', serif !important;
+    font-size: 1.1rem !important;
+    padding: 8px 20px !important;
+    border-radius: 5px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    white-space: nowrap !important;
+}
+
+    dd > a:hover, p > a:hover {
+        background-color: #5a4b3d !important;
+        border-color: #3d2d1d !important;
+        color: #fff !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4) !important;
+        text-decoration: none !important;
+    }
+
+    dd > a:active, p > a:active {
+        background-color: #2d1d0d !important;
+        border-color: #1d0d00 !important;
+        transform: translateY(0) !important;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) !important;
+    }
+
+/* Styles for the Parchment Table Background */
+.table-parchment {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent !important;
+    border: 1px solid #3d2d1d;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+    .table-parchment::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/Content/img/identity/partchment3.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.9;
+        border-radius: inherit;
+    }
+
+    /* Adjust table content colors and backgrounds for readability on the parchment background */
+    .table-parchment th,
+    .table-parchment td {
+        color: #3d2d1d !important; /* Dark text color for readability */
+        border-color: #5a4b3d !important; /* Slightly lighter border for table lines */
+        background-color: transparent !important; /* <<< ADD THIS LINE for cells >>> */
+    }
+
+    /* Optional: Also make table rows transparent if needed, though th/td often suffice */
+    .table-parchment tr {
+        background-color: transparent !important; /* <<< ADD THIS LINE for rows >>> */
+    }
+
+    .table-parchment thead th {
+        border-bottom: 2px solid #3d2d1d !important; /* Stronger line under header */
+    }
+
+    /* Optional: Subtle stripe on odd rows for readability */
+    .table-parchment tbody tr:nth-of-type(odd) {
+        /* If you want stripes, you'll need to decide if they should be opaque or semi-transparent. */
+        /* If transparent: background-color: rgba(0, 0, 0, 0.03) !important; */
+        /* If you want the stripe to be a solid color on top of parchment, keep the rgba as is */
+        background-color: rgba(0, 0, 0, 0.03) !important;
+    }
+
+/* Styles for the Order Details Container (Parchment Background) */
+.order-details-container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #3d2d1d; /* Consistent border with other parchment elements */
+    border-radius: 8px; /* Consistent border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Consistent shadow */
+    background-color: transparent !important; /* Ensure background image is visible */
+    padding: 30px; /* Add some padding inside for spacing */
+    margin-bottom: 20px; /* Space below the container */
+    max-width: 600px; /* Optional: Limit width for better layout */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+}
+
+    .order-details-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/Content/img/identity/partchment3.jpg'); /* Your parchment image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.9; /* Adjust opacity as needed */
+        border-radius: inherit; /* Inherit border-radius from parent */
+    }
+
+    /* Adjust text and background colors for readability on parchment */
+    .order-details-container h4,
+    .order-details-container dt,
+    .order-details-container dd {
+        color: #3d2d1d !important; /* Dark brown text for readability */
+        background-color: transparent !important; /* Ensure backgrounds are transparent */
+    }
+
+    /* Ensure the horizontal rule is visible or themed appropriately */
+    .order-details-container hr {
+        border-top: 1px solid #5a4b3d !important; /* A slightly lighter brown for the line */
+        background-color: transparent !important;
+    }
+
+    /* If the dl-horizontal is causing issues, make its background transparent too */
+    .order-details-container .dl-horizontal {
+        background-color: transparent !important;
+    }
+
+/* --- Home Page Parchment Container --- */
+.home-parchment-container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #3d2d1d; /* Consistent border */
+    border-radius: 8px; /* Consistent border-radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for main content */
+    background-color: transparent !important;
+    padding: 30px 40px; /* Generous padding */
+    margin-top: 30px; /* Space from top */
+    margin-bottom: 30px; /* Space from bottom */
+    max-width: 1200px; /* Adjust max-width as needed for your layout */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .home-parchment-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/Content/img/identity/partchment3.jpg'); /* Your parchment image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.9; /* Adjust opacity as needed */
+        border-radius: inherit;
+    }
+
+    /* Ensure text inside the parchment container is readable */
+    .home-parchment-container h1,
+    .home-parchment-container h2,
+    .home-parchment-container h4,
+    .home-parchment-container p,
+    .home-parchment-container strong {
+        color: #3d2d1d !important; /* Dark brown text */
+        text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.3); /* Subtle text shadow for readability */
+    }
+
+        /* Adjust heading styles for the sections */
+        .home-parchment-container h2.section-title {
+            font-family: 'Marcellus', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+    /* Ensure default Bootstrap links within parchment don't clash */
+    .home-parchment-container a:not(.btn) {
+        color: #6a4a2a !important; /* A contrasting brown for non-button links */
+        text-decoration: underline !important;
+    }
+
+        .home-parchment-container a:not(.btn):hover {
+            color: #8c6a4a !important;
+        }
+
+    /* Styling for the central logo on the Home Page */
+    .home-parchment-container .logo-container {
+        padding: 10px; /* Optional: Add some padding around the logo */
+        display: flex; /* Use flexbox to center the image */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically (if container has height) */
+        min-height: 250px; /* Optional: Give it a minimum height to keep column consistent */
+    }
+
+        .home-parchment-container .logo-container img {
+            max-width: 100%; /* Ensure logo doesn't overflow */
+            height: auto; /* Maintain aspect ratio */
+        }

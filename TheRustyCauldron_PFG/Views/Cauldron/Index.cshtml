@@ -50,35 +50,14 @@
         </div>
     </div>
 
-    @* Right 1/3 for Ingredients, Summary, and Bottle Selection *@
+    @* Right 1/3 for Bottle Selection, Ingredients, and Summary *@
     <div class="col-md-4">
         @if (Model != null && Model.Any())
         {
             <div class="row">
-                @* Ingredients Display (single row, wrapping within col-md-4) *@
-                <div class="col-12">
-                    <div class="row justify-content-center">
-                        @foreach (var item in Model)
-                        {
-                            <div class="col-6 col-sm-4 col-md-6 col-lg-4 mb-4">
-                                <div class="card h-100">
-                                    <img src="@item.ImageUrl"
-                                         class="card-img-top cauldron-ingredient-image"
-                                         alt="@item.Name">
-                                    <div class="card-body">
-                                        <h5 class="card-title">@item.Name</h5>
-                                        <a href="@Url.Action("RemoveFromCauldron", "Cauldron", new { ingredientId = item.Id })" class="btn btn-danger btn-sm remove-from-cauldron mt-2">Remove</a>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    </div>
-                </div>
-
                 @* Cauldron Summary and Bottle Selection *@
-                <div class="col-12">
+                <div class="col-12 mb-4">
                     <div class="cauldron-summary text-center p-3 border rounded">
-                        <p>Total Ingredients: <strong>@Model.Count</strong></p>
                         <div class="bottle-selection-container mt-4 mb-4">
                             <h5>Choose Your Potion Bottle:</h5>
                             <div class="form-group text-left">
@@ -108,6 +87,29 @@
                         </div>
                     </div>
                 </div>
+
+                @* Ingredients Display is now below *@
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-6 col-sm-4 col-md-6 col-lg-4 mb-4">
+                                <div class="card h-100">
+                                    <img src="@item.ImageUrl"
+                                         class="card-img-top cauldron-ingredient-image"
+                                         alt="@item.Name">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Name</h5>
+                                        <a href="@Url.Action("RemoveFromCauldron", "Cauldron", new { ingredientId = item.Id })"
+                                           class="btn btn-danger btn-sm remove-from-cauldron mt-2">
+                                            &times; 
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
         }
         else
@@ -122,10 +124,11 @@
     @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>*@
     <script>
         $(document).ready(function () {
+            // Selector remains the same as it's still 'remove-from-cauldron'
             $('.remove-from-cauldron').click(function (e) {
                 e.preventDefault();
                 var url = $(this).attr('href');
-                var cardColumn = $(this).closest('.col-6'); // Adjusted selector to target the ingredient card's column
+                var cardColumn = $(this).closest('.col-6');
 
                 $.post(url, function (data) {
                     if (data.success) {
@@ -141,7 +144,6 @@
                 });
             });
 
-            // Adjust these selectors now that buttons are in a different place and have new classes
             var brewForm = $('.btn-magic-brew').closest('form');
             var brewButton = $('.btn-magic-brew');
             var stirringSpoon = $('.stirring-spoon');
@@ -166,13 +168,13 @@
                 updateSelectedBottleDisplay();
             }, 50);
 
+
             // Re-bind click event with updated selectors for the brew button
             brewButton.off('click').on('click', function (e) {
                 e.preventDefault();
 
                 var selectedBottle = $('#SelectedBottle').val();
 
-                // Show cauldron and spoon (they should be visible anyway, this is for animation)
                 cauldronContainer.show();
                 stirringSpoon.css('opacity', 1).addClass('stirring-animation');
 
@@ -181,16 +183,15 @@
                 var animationDuration = 3000;
                 setTimeout(function () {
                     stirringSpoon.css('opacity', 0).removeClass('stirring-animation');
-                    // cauldronContainer.hide(); // Only hide if it's supposed to disappear
 
                     // Before submitting, append the selectedBottle to the form
                     $('<input>').attr({
                         type: 'hidden',
-                        name: 'selectedBottleFileName', // Ensure your controller's BrewPotion action accepts this parameter
+                        name: 'selectedBottleFileName',
                         value: selectedBottle
                     }).appendTo(brewForm);
 
-                    brewForm.submit(); // Submit the form
+                    brewForm.submit();
                 }, animationDuration);
             });
         });

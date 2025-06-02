@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Order Confirmation";
+}
+
+<div class="jumbotron text-center">
+    <h1 class="display-4 text-success">Order Placed!</h1>
+    <p class="lead">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            @TempData["SuccessMessage"]
+        }
+        else
+        {
+        <p>Your order has been received. Thank you for your purchase!</p>
+    }
+        </p>
+        <hr class="my-4">
+        <p>
+            <a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Ingredients")" role="button">Brew Another Potion</a>
+            <a class="btn btn-info btn-lg" href="@Url.Action("Index", "Grimoire")" role="button">View Your Grimoire</a>
+        </p>
+    </div>

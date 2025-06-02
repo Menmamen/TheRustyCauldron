@@ -85,6 +85,7 @@ C:\Users\mamen\source\repos\TheRustyCauldron_PFG\TheRustyCauldron_PFG\bin\Micros
 C:\Users\mamen\source\repos\TheRustyCauldron_PFG\TheRustyCauldron_PFG\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\mamen\source\repos\TheRustyCauldron_PFG\TheRustyCauldron_PFG\obj\Debug\TheRustyCauldron_PFG.csproj.AssemblyReference.cache
 C:\Users\mamen\source\repos\TheRustyCauldron_PFG\TheRustyCauldron_PFG\obj\Debug\TheRustyCauldron_PFG.Migrations.InitialCreate.resources
+C:\Users\mamen\source\repos\TheRustyCauldron_PFG\TheRustyCauldron_PFG\obj\Debug\TheRustyCauldron_PFG.Migrations.AddApplicationUserIdToOrder.resources
 C:\Users\mamen\source\repos\TheRustyCauldron_PFG\TheRustyCauldron_PFG\obj\Debug\TheRustyCauldron_PFG.csproj.GenerateResource.cache
 C:\Users\mamen\source\repos\TheRustyCauldron_PFG\TheRustyCauldron_PFG\obj\Debug\TheRustyCauldron_PFG.csproj.CoreCompileInputs.cache
 C:\Users\mamen\source\repos\TheRustyCauldron_PFG\TheRustyCauldron_PFG\obj\Debug\TheRusty.8865C0C4.Up2Date

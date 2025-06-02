@@ -3,6 +3,57 @@
     ViewBag.Title = "Manage";
 }
 
+<style>
+    /* Parchment Background and General Styling */
+    /* REMOVED 'body' from this selector */
+    main {
+        background-image: url('/Content/img/identity/partchment3.jpg'); /* Adjust the path if needed */
+        opacity: 0.9;
+        background-size: cover; /* Cover the entire area */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-attachment: fixed; /* Keep the background fixed during scrolling */
+        color: #3d2d1d; /* A dark brown, parchment-like color for text */
+        font-family: 'Georgia', serif; /* A serif font for a classic look */
+        padding: 20px; /* Add some padding around the content */
+        /* Styles specifically for the main content box (now with parchment) */
+        background-color: rgba(255, 255, 230, 0.8); /* Very light, slightly transparent off-white layer *on top* of the parchment */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        max-width: 800px; /* Limit the width of the content */
+        margin: 20px auto; /* Center the content */
+    }
+
+    h2 {
+        color: #6a4a3b; /* A slightly darker brown for headings */
+        border-bottom: 2px solid #b8860b; /* A golden border */
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    .dl-horizontal dt {
+        font-weight: bold;
+        color: #5e3a2a;
+    }
+
+    .dl-horizontal dd {
+        margin-bottom: 10px;
+    }
+
+    a {
+        color: #8b4513; /* Saddle brown for links */
+        text-decoration: none; /* Remove underlines */
+    }
+
+        a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+    .text-success {
+        color: #2e8b57 !important; /* Sea green for success messages */
+        font-weight: bold;
+    }
+</style>
+
 <main aria-labelledby="title">
     <h2 id="title">@ViewBag.Title.</h2>
 
@@ -13,7 +64,7 @@
         <dl class="dl-horizontal">
             <dt>Password:</dt>
             <dd>
-                [
+                
                 @if (Model.HasPassword)
                 {
                     @Html.ActionLink("Change your password", "ChangePassword")
@@ -22,22 +73,22 @@
                 {
                     @Html.ActionLink("Create", "SetPassword")
                 }
-                ]
+                
             </dd>
             <dt>External Logins:</dt>
             <dd>
-                @Model.Logins.Count [
-                @Html.ActionLink("Manage", "ManageLogins") ]
+                @Model.Logins.Count 
+                @Html.ActionLink("Manage", "ManageLogins") 
             </dd>
             @*
                 Phone Numbers can used as a second factor of verification in a two-factor authentication system.
-                
+
                 See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
                     for details on setting up this ASP.NET application to support two-factor authentication using SMS.
-                
+
                 Uncomment the following block after you have set up two-factor authentication
             *@
-            @*  
+            @*
                 <dt>Phone Number:</dt>
                 <dd>
                     @(Model.PhoneNumber ?? "None")

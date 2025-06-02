@@ -38,6 +38,7 @@ namespace TheRustyCauldron_PFG.Models
         public DbSet<Potion> Potions { get; set; }
         public DbSet<UserPotion> UserPotions { get; set; }
         public DbSet<PotionIngredient> PotionIngredients { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

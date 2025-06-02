@@ -3,6 +3,26 @@
     ViewBag.Title = "Register";
 }
 
+<style>
+    main {
+        background-image: url('/Content/img/identity/partchment3.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #3d2d1d;
+        padding: 20px;
+        background-color: rgba(255, 255, 230, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    h2, h4 {
+        color: #6a4a3b;
+    }
+</style>
+
 <main aria-labelledby="title">
     <h2 id="title">@ViewBag.Title.</h2>
 
@@ -12,26 +32,26 @@
         <h4>Create a new account.</h4>
         <hr />
         @Html.ValidationSummary("", new { @class = "text-danger" })
-        <div class="row">
-            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label" })
-            <div class="col-md-10">
+        <div class="mb-3 row">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
             </div>
         </div>
-        <div class="row">
-            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 col-form-label" })
-            <div class="col-md-10">
+        <div class="mb-3 row">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
                 @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
             </div>
         </div>
-        <div class="row">
-            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 col-form-label" })
-            <div class="col-md-10">
+        <div class="mb-3 row">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-3 col-form-label" })
+            <div class="col-md-9">
                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
             </div>
         </div>
         <div class="row">
-            <div class="offset-md-2 col-md-10">
+            <div class="offset-md-3 col-md-9">
                 <input type="submit" value="Register" class="btn btn-outline-dark" />
             </div>
         </div>
