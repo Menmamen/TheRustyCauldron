@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\therustycauldron_pfg\\models\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\models\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ingredient.cs",
+              "DocumentMoniker": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Models\\Ingredient.cs",
+              "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Models\\Ingredient.cs",
+              "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Models\\Ingredient.cs",
+              "RelativeToolTip": "TheRustyCauldron_PFG\\Models\\Ingredient.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAUwBAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T00:19:59.323Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+﻿@model TheRustyCauldron_PFG.Models.Potion
+
+@{
+    ViewBag.Title = "Potion Brewed!"; // Sets the page title
+}
+
+<style>
+    /*
+    --- Potion Display Styling ---
+    This CSS creates a layered effect for the potion bottle and its effect.
+    Adjust 'width', 'height', and the 'top/left/width' for '.effect-image'
+    to best fit your specific potion bottle and effect image designs.
+    */
+    .potion-display-container {
+        position: relative; /* Essential for absolute positioning of children */
+        width: 250px; /* Adjust container width as needed */
+        height: 300px; /* Adjust container height as needed */
+        margin: 20px auto; /* Center the container */
+        border: 1px solid #ddd; /* Optional: for visual debugging or subtle frame */
+        border-radius: 8px;
+        overflow: hidden; /* Ensures images don't spill out */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    }
+
+        .potion-display-container .bottle-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Bottle image fills the container */
+            height: 100%;
+            object-fit: contain; /* Scales image down to fit without cropping */
+            z-index: 1; /* Bottle is the base layer */
+        }
+
+        .potion-display-container .effect-image {
+            position: absolute;
+            top: 57%;
+            left: 40%;
+            width: 20%;
+            height: auto;
+            z-index: 2;
+            opacity: 1;
+        }
+        }
+
+    /* Additional styling for the card */
+    .card-body {
+        padding-top: 0; /* Remove top padding to bring image closer */
+    }
+</style>
+
+<h1>Potion Brewed!</h1>
+
+<div class="card text-center shadow-lg mx-auto" style="max-width: 500px;">
+    @* Increased shadow, centered, max-width *@
+    <div class="card-body">
+        <h2 class="card-title text-primary">@Model.Name</h2>
+
+        <div class="potion-display-container">
+            @if (!string.IsNullOrEmpty(Model.BottleImageUrl))
+            {
+                <img src="@Url.Content(Model.BottleImageUrl)" class="bottle-image" alt="Potion Bottle">
+            }
+            @* This is now your effect image *@
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Url.Content(Model.ImageUrl)" class="effect-image" alt="Potion Effect">
+            }
+        </div>
+
+        <p class="card-text lead">
+            <strong>Effect:</strong> <span class="badge badge-info">@Model.Effect</span>
+        </p>
+        <p class="card-text"><strong>Description:</strong> @Model.Description</p>
+        <p class="card-text"><small class="text-muted">Final Coordinates: (@Model.FinalX, @Model.FinalY)</small></p>
+
+        <hr />
+
+        <div class="d-flex justify-content-center flex-wrap">
+            @* Use flexbox for button alignment *@
+            @Html.ActionLink("Back to Ingredients", "Index", "Ingredients", null, new { @class = "btn btn-primary mt-3 mx-1" })
+            @Html.ActionLink("View Grimoire", "Index", "Grimoire", null, new { @class = "btn btn-info mt-3 mx-1" })
+        </div>
+    </div>
+</div>

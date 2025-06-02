@@ -1,0 +1,96 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<TheRustyCauldron_PFG.Models.UserPotion> 
+
+@{
+    ViewBag.Title = "Your Grimoire";
+}
+
+<style>
+    /*
+    --- Potion Display Styling ---
+    Reusing the styling for the layered potion bottle and its effect.
+    This CSS should ideally be in a shared stylesheet or specific to Grimoire,
+    but placing it here for immediate testing.
+    */
+    .potion-display-container {
+        position: relative; /* Essential for absolute positioning of children */
+        width: 100%; /* Make it responsive within the card */
+        padding-bottom: 60%; /* Aspect ratio for the container (e.g., 250px width, 300px height -> 300/250 = 1.2 = 120%) */
+        margin: 0 auto 15px auto; /* Center it, add bottom margin */
+        overflow: hidden; /* Ensures images don't spill out */
+
+    }
+
+        .potion-display-container .bottle-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Bottle image fills the container */
+            height: 100%;
+            object-fit: contain; /* Scales image down to fit without cropping */
+            z-index: 1; /* Bottle is the base layer */
+        }
+
+        .potion-display-container .effect-image {
+            position: absolute;
+            top: 59%; /* Example: 35% from the top of the container */
+            left: 43%; /* Example: 30% from the left of the container */
+            width: 12%; /* Example: 40% width of the container */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 2; /* Effect image is on top of the bottle */
+            opacity: 1; /* Optional: slight transparency for blending */
+        }
+
+    /* Adjustments for card image if it was used before */
+    .card-img-top {
+        max-height: none; /* Override previous max-height */
+        object-fit: initial; /* Override previous object-fit */
+        width: auto;
+        height: auto;
+    }
+</style>
+
+<h1>Your Grimoire</h1>
+
+@if (Model != null && Model.Any())
+{
+    <div class="row">
+        @foreach (var userPotionEntry in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="potion-display-container">
+                        @if (!string.IsNullOrEmpty(userPotionEntry.Potion.BottleImageUrl))
+                        {
+                            <img src="@Url.Content(userPotionEntry.Potion.BottleImageUrl)" class="bottle-image" alt="Potion Bottle">
+                        }
+                        @if (!string.IsNullOrEmpty(userPotionEntry.Potion.ImageUrl))
+                        {
+                            <img src="@Url.Content(userPotionEntry.Potion.ImageUrl)" class="effect-image" alt="Potion Effect">
+                        }
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">@userPotionEntry.Potion.Name</h5>
+                        <p class="card-text"><strong>Effect:</strong> @userPotionEntry.Potion.Effect</p>
+                        <p class="card-text">@userPotionEntry.Potion.Description</p>
+                        <p class="card-text">
+                            <strong>Price:</strong> <span class="text-success">@userPotionEntry.Potion.Price.ToString("C")</span>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                Discovered: @userPotionEntry.DiscoveryDate.ToShortDateString() @* DIRECT ACCESS *@
+                            </small>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Original Coordinates: (@userPotionEntry.Potion.FinalX, @userPotionEntry.Potion.FinalY)</small></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>Your grimoire is empty! Start brewing potions to fill it up.</p>
+    @Html.ActionLink("Start Brewing", "Index", "Ingredients", null, new { @class = "btn btn-primary" })
+}

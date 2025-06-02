@@ -1,0 +1,605 @@
+﻿/* Add or update these styles in your Site.css or this file's <style> block */
+
+/* Cauldron Container - MUST be relative for child absolute positioning */
+.cauldron-animation-container {
+    position: relative; /* Key for positioning buttons over it */
+    width: 100%; /* Or set a specific max-width if desired */
+    max-width: 600px; /* Example: adjust as needed */
+    margin: 20px auto; /* Center the cauldron horizontally */
+    display: block; /* Ensure it takes up its own space */
+}
+
+/* Styles for cauldron and spoon images */
+.cauldron-image {
+    display: block; /* Remove extra space below image */
+    width: 100%;
+    height: auto;
+    z-index: 3;
+    position: relative; /* Ensure it's rendered below buttons if buttons have higher z-index */
+}
+
+.stirring-spoon {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 70%;
+    height: auto;
+    /* opacity: 0; <--- REMOVED THIS LINE */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2; /* Spoon on top of cauldron */
+    transform-origin: 50% 90%; /* Pivot point for rotation */
+}
+
+/* Container for the buttons */
+.cauldron-buttons-overlay {
+    position: absolute; /* Position over the cauldron container */
+    bottom: 5%; /* Adjust vertical position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Fine-tune horizontal centering */
+    z-index: 3; /* Ensure buttons are on top of cauldron and spoon */
+    display: flex; /* Use flexbox for button alignment */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally within the overlay */
+    width: 100%; /* Allow buttons to use available width for centering */
+}
+/* Container for the buttons */
+.cauldron-buttons-overlay {
+    position: absolute; /* Position over the cauldron container */
+    bottom: 5%; /* Adjust vertical position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Fine-tune horizontal centering */
+    z-index: 3; /* Ensure buttons are on top of cauldron and spoon */
+    display: flex; /* Use flexbox for button alignment */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally within the overlay */
+    width: 100%; /* Allow buttons to use available width for centering */
+}
+
+    /* Styling for the buttons on the cauldron page - MATCHING INGREDIENT CARD BUTTONS */
+    /* Apply .btn-primary styles directly or create a new class for consistency */
+    .cauldron-buttons-overlay .btn { /* Target buttons within the overlay */
+        background-color: #3d2d1d; /* From .card-body .btn-primary */
+        border-color: #2d1d0d; /* From .card-body .btn-primary */
+        color: #eee8d5; /* From .card-body .btn-primary */
+        font-family: 'Marcellus', serif; /* From .card-body .btn-primary */
+        font-size: 1.1rem; /* Adjust font size to match ingredient card buttons if needed */
+        padding: 8px 20px; /* Adjust padding to match ingredient card buttons if needed */
+        margin-bottom: 10px; /* Space between buttons */
+        border-radius: 5px; /* Consistent border radius */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Consistent shadow */
+        transition: all 0.3s ease; /* Smooth transitions */
+        min-width: 180px; /* Ensure consistent width for buttons */
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Consistent text shadow */
+    }
+
+        .cauldron-buttons-overlay .btn:hover {
+            background-color: #5a4b3d; /* From .card-body .btn-primary:hover */
+            border-color: #3d2d1d; /* From .card-body .btn-primary:hover */
+            color: #fff; /* From .card-body .btn-primary:hover */
+            transform: translateY(-2px); /* Slight lift effect on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+        }
+
+/* Styling for the buttons */
+.btn-magic-brew {
+    background-color: #28a745; /* Darker green */
+    color: #fff;
+    border: 2px solid #1e7e34; /* Darker border */
+    font-size: 1.25rem; /* Larger font */
+    padding: 10px 25px;
+    margin-bottom: 10px; /* Space between buttons */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transitions */
+    min-width: 200px; /* Ensure consistent width for buttons */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Text shadow for better readability */
+}
+
+    .btn-magic-brew:hover {
+        background-color: #218838; /* Darker on hover */
+        border-color: #1c7430;
+        transform: translateY(-2px); /* Slight lift effect */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    }
+
+.btn-magic-empty {
+    background-color: #dc3545; /* Red */
+    color: #fff;
+    border: 2px solid #c82333; /* Darker border */
+    font-size: 1.1rem; /* Slightly smaller than brew */
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    min-width: 180px; /* Consistent width */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+    .btn-magic-empty:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    }
+
+/* Keyframes for stirring animation - remains the same */
+@keyframes stir {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) rotate(15deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(-15deg);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+.stirring-animation {
+    animation: stir 1s infinite alternate; /* Adjust duration and iteration as needed */
+}
+
+/* --- The rest of your existing CSS --- */
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+    will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Styles for Image Hover/Zoom Effect */
+.ingredient-image {
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom */
+}
+
+.zoomed-image {
+    transform: scale(1.1); /* Zooms the image to 110% of its size */
+    position: relative; /* Ensures z-index works */
+    z-index: 10; /* Brings the zoomed image to the front, above siblings */
+}
+
+/* Ensure html and body take full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* General Body Styles */
+body {
+    background-image: url('/Content/img/identity/bg6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #f7e7ce;
+    font-family: 'Marcellus', serif;
+    font-size: 1.125rem;
+    color: #eee8d5;
+}
+
+/* Fixed 'sign' Styling */
+.sign {
+    position: fixed;
+    top: -30px; /* Keep its offset position */
+    left: -20px;
+    z-index: 1000; /* Stays on top of everything, including the navbar */
+    padding: 10px;
+}
+
+    .sign img {
+        height: 250px; /* Adjust height of the sign image */
+        width: auto;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+
+/* NAVBAR STYLES: Make it fixed at the top */
+.navbar {
+    position: fixed; /* Makes the navbar stay at the top */
+    top: 0; /* Aligns to the very top edge of the viewport */
+    left: 0; /* Aligns to the very left edge */
+    right: 0; /* Extends to the very right edge */
+    z-index: 990; /* Place it just below the 'sign' if they overlap */
+
+    background-image: url('/Content/img/identity/wood.png');
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 60px !important;
+    display: flex;
+    align-items: center;
+}
+
+
+/* CONTENT ADJUSTMENT: Push main content down below the fixed navbar */
+.container.body-content {
+    padding-top: 60px; /* Adjust this value to match your navbar's height */
+}
+
+
+/* Navbar Link Styles */
+.navbar-nav .nav-link {
+    font-family: 'Marcellus', serif;
+    color: #eee8d5 !important; /* Pale Goldenrod fill color, override Bootstrap */
+    text-shadow: -1px -1px 0 #3d2d1d, /* Dark outline from headings */
+    1px -1px 0 #3d2d1d, -1px 1px 0 #3d2d1d, 1px 1px 0 #3d2d1d;
+    font-size: 1.125rem;
+}
+
+    /* Styles for hover and focus states of navbar links (THIS IS THE GLOW) */
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+        color: #fcf5e9 !important; /* A slightly brighter Pale Goldenrod on hover/focus */
+        text-shadow: -1px -1px 0 #2d1d0d, /* Slightly darker outline on hover */
+        1px -1px 0 #2d1d0d, -1px 1px 0 #2d1d0d, 1px 1px 0 #2d1d0d, 0 0 5px rgba(255, 255, 255, 0.3); /* Subtle glow for hover/focus (adjust opacity or blur for intensity) */
+    }
+
+    /* Style for the active (current) navbar link */
+    .navbar-nav .nav-link.active {
+        color: #fcf5e9 !important; /* Brighter for active link */
+        text-shadow: -1px -1px 0 #2d1d0d, 1px -1px 0 #2d1d0d, -1px 1px 0 #2d1d0d, 1px 1px 0 #2d1d0d, 0 0 8px rgba(255, 255, 255, 0.5); /* Stronger glow for active */
+    }
+
+/* Heading Styles (Marcellus font, Pale Goldenrod fill, Hard Outline with text-shadow) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Marcellus', serif;
+    color: #eee8d5;
+    text-shadow: -1px -1px 0 #3d2d1d, 1px -1px 0 #3d2d1d, -1px 1px 0 #3d2d1d, 1px 1px 0 #3d2d1d;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.75rem;
+}
+
+h3 {
+    font-size: 2.25rem;
+}
+
+h4 {
+    font-size: 1.75rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.25rem;
+}
+
+/* Specific Stroked Text Class */
+.stroked-text {
+    color: #eee8d5;
+    -webkit-text-stroke: 1px #3d2d1d;
+    text-stroke: 1px #3d2d1d;
+}
+/*
+--- Specific Styles for Single Bottle Card Display ---
+These styles apply the .card look to the container for the single
+selected bottle image.
+*/
+.selected-bottle-card-container {
+    max-width: 220px; /* Limit the width of the bottle card for a compact look */
+    margin: 0 auto; /* Center the card horizontally */
+}
+
+    .selected-bottle-card-container .card-body {
+        padding: 15px; /* Adjust padding inside the single bottle card body */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+.selected-bottle-image-display {
+    height: 180px; /* Make the displayed bottle image significantly bigger */
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto; /* Center the image */
+    padding: 5px; /* Padding inside the card-body for the image */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for image changes */
+}
+
+.selected-bottle-card-container .card-title {
+    margin-bottom: 0; /* Remove default margin */
+    margin-top: 10px; /* Space between image and title */
+    font-size: 1.2rem; /* Make the title a bit more prominent for the single bottle */
+    color: #3d2d1d !important; /* Ensure color matches your theme */
+    text-shadow: none;
+}
+
+
+/* --- General Card Styles (for ingredients and selected bottle card) --- */
+.card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #3d2d1d;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: transparent !important;
+}
+
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/Content/img/identity/partchment3.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.9;
+    }
+
+.card-body {
+    padding-top: 15px; /* Adjusted to 15px for general cards for better consistency */
+    padding-bottom: 15px; /* Added for general cards */
+    text-align: center;
+    background-color: transparent !important;
+    position: relative;
+    z-index: 0;
+}
+
+    .card-body .card-title {
+        font-family: 'Marcellus', serif;
+        color: #3d2d1d !important;
+        text-shadow: none;
+        margin-bottom: 0.5rem; /* Adjusted for general cards */
+        font-size: 1.1rem; /* Adjusted for general cards */
+    }
+
+    .card-body .card-text {
+        color: #5a4b3d !important;
+    }
+
+    .card-body strong {
+        color: #3d2d1d !important;
+    }
+
+    .card-body .text-muted {
+        color: #7a6b5d !important;
+    }
+
+    .card-body .btn-primary {
+        background-color: #3d2d1d;
+        border-color: #2d1d0d;
+        color: #eee8d5;
+        font-family: 'Marcellus', serif;
+    }
+
+        .card-body .btn-primary:hover {
+            background-color: #5a4b3d;
+            border-color: #3d2d1d;
+            color: #fff;
+        }
+
+.card-img-top {
+    border-top-left-radius: calc(8px - 1px);
+    border-top-right-radius: calc(8px - 1px);
+    padding: 10px;
+}
+
+.cauldron-ingredient-image {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+
+/* --- Button Styles --- */
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #eee8d5;
+    font-family: 'Marcellus', serif;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+        color: #fff;
+    }
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #eee8d5;
+    font-family: 'Marcellus', serif;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+        color: #fff;
+    }
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #3d2d1d; /* Changed to dark text for contrast on warning button */
+    font-family: 'Marcellus', serif;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #d39e00;
+        color: #3d2d1d;
+    }
+
+.btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+}
+
+.btn-sm {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* --- Bootstrap Overrides for Select --- */
+.form-control {
+    background-color: rgba(61, 45, 29, 0.8);
+    color: #eee8d5;
+    border: 1px solid #5a4b3d;
+    font-family: 'Marcellus', serif;
+}
+
+    .form-control:focus {
+        border-color: #d4af37;
+        box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+    }
+
+    .form-control option {
+        background-color: #3d2d1d;
+        color: #eee8d5;
+    }
+
+/* --- Cauldron Summary & Bottle Selection Layout --- */
+.cauldron-summary {
+    margin-top: 0; /* Reset top margin as it's now in a flex column */
+    padding-top: 1.5rem;
+    min-height: 100%; /* Ensures it fills the height of its column */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center horizontally */
+    border: 1px solid #3d2d1d; /* Assuming this is part of the card-like appearance */
+    border-radius: 8px; /* Match card border-radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Match card shadow */
+    background-color: transparent !important; /* Match card background */
+    position: relative;
+    z-index: 0;
+}
+
+    .cauldron-summary::before { /* Add parchment background to summary */
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/Content/img/identity/partchment3.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        opacity: 0.9;
+        border-radius: inherit; /* Inherit border-radius from parent */
+    }
+
+    .cauldron-summary p {
+        color: #3d2d1d; /* Text color for summary */
+        font-family: 'Marcellus', serif;
+        font-size: 1.1rem;
+        text-shadow: none;
+    }
+
+    .cauldron-summary strong {
+        color: #d4af37 !important; /* Highlight strong values */
+    }
+
+
+/* --- Cauldron Animation Container (Left 2/3) --- */
+/* This section has the spoon opacity corrected */
+
+
+.bottom-decoration-image {
+    max-width: 80%;
+    height: auto;
+    display: inline-block;
+}
+
+/* --- Bottle Selection Specifics --- */
+.bottle-selection-container {
+    padding: 15px;
+    margin-bottom: 20px; /* Space between bottle choices and buttons */
+}
+
+    .bottle-selection-container h5 {
+        color: #eee8d5;
+        font-family: 'Marcellus', serif;
+        margin-bottom: 15px;
+        text-shadow: -1px -1px 0 #3d2d1d, 1px -1px 0 #3d2d1d, -1px 1px 0 #3d2d1d, 1px 1px 0 #3d2d1d;
+    }
+
+.bottle-option-col {
+    display: flex; /* For centering content within the column */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Space between bottle rows if they wrap */
+}
+
+.bottle-option {
+    display: block; /* Make the label take full width for easier clicking */
+    cursor: pointer;
+    border: 3px solid transparent; /* Initial border */
+    border-radius: 8px;
+    overflow: hidden; /* Ensure image corners respect border-radius */
+    transition: all 0.2s ease-in-out;
+    padding: 5px; /* Padding inside the border */
+    background-color: rgba(0, 0, 0, 0.2); /* Slight background for options */
+}
+
+    .bottle-option:hover {
+        border-color: #f7d794; /* Light border on hover */
+    }
+
+    .bottle-option.selected {
+        border-color: #d4af37; /* Gold border for selected bottle */
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.7); /* Glow effect */
+        background-color: rgba(0, 0, 0, 0.4); /* Darker background for selected */
+    }
+
+.bottle-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+.bottle-radio {
+    display: none; /* Hide the actual radio button */
+}

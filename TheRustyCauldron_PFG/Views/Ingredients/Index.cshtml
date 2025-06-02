@@ -1,0 +1,81 @@
+﻿@model IEnumerable<TheRustyCauldron_PFG.Models.Ingredient>
+
+@{
+    ViewBag.Title = "Our Ingredients";
+}
+
+<h1>Our Ingredients</h1>
+
+<div class="row justify-content-center">
+    @foreach (var ingredient in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="@ingredient.ImageUrl"
+                     data-hover-src="/Content/img/CloseUps/@(ingredient.Name.Replace(" ", "")).webp"
+                     class="card-img-top ingredient-image"
+                     alt="@ingredient.Name"
+                     style="max-height: 200px; object-fit: contain;"> 
+                <div class="card-body">
+                    <h5 class="card-title">@ingredient.Name</h5>
+                    <p class="card-text">@ingredient.Description</p>
+                    <p class="card-text"><strong>Price:</strong> @ingredient.Price.ToString("C")</p>
+                    <p class="card-text"><small class="text-muted">Type: @ingredient.Type</small></p>
+                    <p class="card-text"><small class="text-muted">Movement: (@ingredient.DX, @ingredient.DY)</small></p>
+                    <a href="@Url.Action("AddToCauldron", "Cauldron", new { ingredientId = ingredient.Id })" class="btn btn-primary add-to-cauldron">Add to Cauldron</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            // Existing "Add to Cauldron" AJAX (keep this)
+            $('.add-to-cauldron').click(function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                $.post(url, function (data) {
+                    alert(data.message);
+                }).fail(function () {
+                    alert("Error adding ingredient to cauldron.");
+                });
+            });
+
+            // NEW: Image Hover Effect
+            $('.ingredient-image').hover(
+                function () {
+                    // Mouse Enter
+                    var originalSrc = $(this).attr('src');
+                    var hoverSrc = $(this).data('hover-src'); // Get the hover image URL from data-hover-src
+
+                    if (hoverSrc) { // Only swap if a hover image is defined
+                        $(this).attr('src', hoverSrc);
+                        $(this).addClass('zoomed-image'); // Add class for zoom effect
+                    }
+                },
+                function () {
+                    // Mouse Leave
+                    var originalSrc = $(this).data('original-src'); // Get the original image URL from data-original-src
+
+                    if (originalSrc) { // Only swap back if an original image was stored
+                        $(this).attr('src', originalSrc);
+                        $(this).removeClass('zoomed-image'); // Remove zoom class
+                    }
+                }
+            );
+
+            // Preload hover images (optional, for smoother transition)
+            $('.ingredient-image').each(function () {
+                var hoverSrc = $(this).data('hover-src');
+                if (hoverSrc) {
+                    // Store original src to swap back to
+                    $(this).attr('data-original-src', $(this).attr('src'));
+                    // Preload the hover image
+                    $('<img/>')[0].src = hoverSrc;
+                }
+            });
+        });
+    </script>
+}
