@@ -5,6 +5,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|c:\\users\\mamen\\source\\repos\\therustycauldron_pfg\\therustycauldron_pfg\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|c:\\users\\mamen\\source\\repos\\therustycauldron_pfg\\therustycauldron_pfg\\views\\order\\orderform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\views\\order\\orderform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|c:\\users\\mamen\\source\\repos\\therustycauldron_pfg\\therustycauldron_pfg\\views\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\views\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|c:\\users\\mamen\\source\\repos\\therustycauldron_pfg\\therustycauldron_pfg\\views\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\views\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|c:\\users\\mamen\\source\\repos\\therustycauldron_pfg\\therustycauldron_pfg\\views\\ingredients\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\views\\ingredients\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|c:\\users\\mamen\\source\\repos\\therustycauldron_pfg\\therustycauldron_pfg\\views\\grimoire\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\views\\grimoire\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|c:\\users\\mamen\\source\\repos\\therustycauldron_pfg\\therustycauldron_pfg\\views\\cauldron\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\views\\cauldron\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|c:\\users\\mamen\\source\\repos\\therustycauldron_pfg\\therustycauldron_pfg\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{973CA9B0-BDE3-4DED-A0B5-BF1749CB37B7}|TheRustyCauldron_PFG\\TheRustyCauldron_PFG.csproj|solutionrelative:therustycauldron_pfg\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +42,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Order\\OrderForm.cshtml",
+              "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Views\\Order\\OrderForm.cshtml",
+              "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Order\\OrderForm.cshtml",
+              "RelativeToolTip": "TheRustyCauldron_PFG\\Views\\Order\\OrderForm.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T15:33:12.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Manage\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Views\\Manage\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Manage\\Index.cshtml",
+              "RelativeToolTip": "TheRustyCauldron_PFG\\Views\\Manage\\Index.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAADMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T15:32:23.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Manage\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Views\\Manage\\ChangePassword.cshtml",
+              "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Manage\\ChangePassword.cshtml",
+              "RelativeToolTip": "TheRustyCauldron_PFG\\Views\\Manage\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T15:31:52.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Ingredients\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Views\\Ingredients\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Ingredients\\Index.cshtml",
+              "RelativeToolTip": "TheRustyCauldron_PFG\\Views\\Ingredients\\Index.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAACIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T15:30:56.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Grimoire\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Views\\Grimoire\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Grimoire\\Index.cshtml",
+              "RelativeToolTip": "TheRustyCauldron_PFG\\Views\\Grimoire\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T15:30:18.476Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -28,10 +117,40 @@
               "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "TheRustyCauldron_PFG\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABwAAAAAAAAAAAAUwEEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-02T22:57:16.685Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Cauldron\\Index.cshtml",
+              "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Views\\Cauldron\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Cauldron\\Index.cshtml",
+              "RelativeToolTip": "TheRustyCauldron_PFG\\Views\\Cauldron\\Index.cshtml",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAAKoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T15:29:35.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "TheRustyCauldron_PFG\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\mamen\\source\\repos\\TheRustyCauldron_PFG\\TheRustyCauldron_PFG\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "TheRustyCauldron_PFG\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAqwEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T15:26:57.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }

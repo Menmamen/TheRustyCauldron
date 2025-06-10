@@ -124,7 +124,6 @@
     @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>*@
     <script>
         $(document).ready(function () {
-            // Selector remains the same as it's still 'remove-from-cauldron'
             $('.remove-from-cauldron').click(function (e) {
                 e.preventDefault();
                 var url = $(this).attr('href');
@@ -169,7 +168,6 @@
             }, 50);
 
 
-            // Re-bind click event with updated selectors for the brew button
             brewButton.off('click').on('click', function (e) {
                 e.preventDefault();
 

@@ -5,40 +5,23 @@
 }
 
 <style>
-    /* Parchment Background and Text Color for the main content area */
     main {
-        background-image: url('/Content/img/identity/partchment3.jpg'); /* Adjust the path if needed */
-        background-size: cover; /* Cover the entire area */
-        background-repeat: no-repeat; /* Prevent the image from repeating */
-        background-attachment: fixed; /* Keep the background fixed during scrolling */
-        color: #3d2d1d; /* A dark brown, parchment-like color for general text */
-        padding: 20px; /* Add some padding around the content */
-        /* These styles make the main div itself look like a floating parchment sheet */
-        background-color: rgba(255, 255, 230, 0.8); /* Very light, slightly transparent off-white layer *on top* of the parchment */
+        background-image: url('/Content/img/identity/partchment3.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #3d2d1d;
+        padding: 20px;
+        background-color: rgba(255, 255, 230, 0.8);
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-        max-width: 800px; /* Limit the width of the content */
-        margin: 20px auto; /* Center the content */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 800px;
+        margin: 20px auto;
     }
 
-    /* NEW: Darker titles */
     h2, h3, h4 {
-        color: #6a4a3b; /* A darker brown for all h2 and h4 headings */
+        color: #6a4a3b;
     }
-
-    /* You can also add the border-bottom back for h2 for visual separation if desired, as it was in an earlier version */
-    /*
-    h2 {
-        border-bottom: 2px solid #b8860b; // A golden border
-        padding-bottom: 5px;
-        margin-bottom: 15px;
-    }
-    */
-
-    /* All other specific styling for hr, col-form-label, form-control, btn-outline-dark, text-danger
-       are NOT included here, as per your request to only apply background and general text/title darkness.
-       Your application's general Bootstrap or shared CSS will dictate these styles.
-    */
 </style>
 
 <main aria-labelledby="title">
@@ -49,7 +32,7 @@
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
                 {
                     @Html.AntiForgeryToken()
-                    <h4>Use a local account to log in.</h4> 
+                    <h4>Use a local account to log in.</h4>
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="mb-3 row">
                         @Html.LabelFor(m => m.Email, new { @class = "col-md-3 col-form-label" })
@@ -81,21 +64,9 @@
                     <p class="mt-3">
                         @Html.ActionLink("Register as a new user", "Register")
                     </p>
-                    @* Enable this once you have account confirmation enabled for password reset functionality
-                        <p>
-                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                        </p>*@
                 }
             </section>
         </div>
-        @* The social login section was commented out in your provided code, so I'll keep it commented out.
-            <div class="col-md-4">
-                <section id="socialLoginForm">
-                    <h4>Use another service to log in.</h4> {{-- This h4 will also be darker --}}
-                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                </section>
-            </div>
-        *@
     </div>
 </main>
 

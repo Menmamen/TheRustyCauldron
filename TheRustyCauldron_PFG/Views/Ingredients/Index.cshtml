@@ -32,7 +32,7 @@
 @section scripts {
     <script>
         $(document).ready(function () {
-            // Existing "Add to Cauldron" AJAX (keep this)
+            // "Add to Cauldron" AJAX 
             $('.add-to-cauldron').click(function (e) {
                 e.preventDefault();
                 var url = $(this).attr('href');
@@ -66,7 +66,7 @@
                 }
             );
 
-            // Preload hover images (optional, for smoother transition)
+            // Preload hover images (for smoother transition)
             $('.ingredient-image').each(function () {
                 var hoverSrc = $(this).data('hover-src');
                 if (hoverSrc) {
