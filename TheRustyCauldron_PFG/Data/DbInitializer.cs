@@ -1,7 +1,7 @@
-﻿using TheRustyCauldron_PFG.Models; // Adjust namespace if your models are elsewhere
+﻿using TheRustyCauldron_PFG.Models; 
 using System.Linq;
-using System.Data.Entity; // Keep this for DbContext operations, but for AddOrUpdate we need Migrations
-using System.Data.Entity.Migrations; // <--- ADD THIS USING STATEMENT for AddOrUpdate
+using System.Data.Entity; 
+using System.Data.Entity.Migrations; 
 
 namespace TheRustyCauldron_PFG.Data
 {
@@ -9,11 +9,6 @@ namespace TheRustyCauldron_PFG.Data
     {
         public static void Initialize(ApplicationDbContext context)
         {
-            // --- CRITICAL CHANGE 1: REMOVE THIS LINE ---
-            // if (context.Ingredients.Any())
-            // {
-            //     return;   // DB has been seeded (This prevents adding new data later)
-            // }
 
             var ingredients = new Ingredient[]
             {
@@ -84,7 +79,7 @@ namespace TheRustyCauldron_PFG.Data
 
             foreach (Ingredient i in ingredients)
             {
-                // --- CRITICAL CHANGE 2: Use AddOrUpdate instead of Add ---
+
                 context.Ingredients.AddOrUpdate(
                     p => p.Name, // This tells Entity Framework to use the 'Name' property to identify existing ingredients.
                                  // If an ingredient with the same Name already exists, it will be updated.
@@ -94,8 +89,6 @@ namespace TheRustyCauldron_PFG.Data
             }
             context.SaveChanges(); // Save changes after all ingredients are processed
 
-            // You can also seed initial potions here if you have a predefined set
-            // For now, we'll focus on dynamic discovery.
         }
     }
 }

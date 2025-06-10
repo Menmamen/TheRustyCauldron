@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity; // Keep this for EF6
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using TheRustyCauldron_PFG.Models;
 using Microsoft.AspNet.Identity;
 using System.Threading.Tasks;
-// Removed System.Numerics as it's not used and can cause ambiguity with System.Drawing.Point or similar if not careful
 
 namespace TheRustyCauldron_PFG.Controllers
 {
@@ -93,13 +92,9 @@ namespace TheRustyCauldron_PFG.Controllers
                 return RedirectToAction("Index", "Cauldron");
             }
 
-            // Get selected ingredient IDs from the cauldron (which stores full Ingredient objects)
-            // This assumes your `Ingredient` model has an `Id` property.
+
             List<int> selectedIngredientIds = cauldron.Select(i => i.Id).ToList();
 
-            // Retrieve the full ingredient details from the database to ensure you have the price.
-            // This is safer than relying solely on the Session-stored Ingredient objects,
-            // as prices might change or the session might not have the most up-to-date data.
             var selectedIngredientsFromDb = await db.Ingredients
                                                     .Where(i => selectedIngredientIds.Contains(i.Id))
                                                     .ToListAsync();
@@ -134,13 +129,10 @@ namespace TheRustyCauldron_PFG.Controllers
             if (existingPotion != null)
             {
                 discoveredPotion = existingPotion;
-                // THIS IS THE CRUCIAL ADDITION/FIX: Update the price of the existing potion
                 // This ensures that if it was created before price tracking, its price gets updated.
                 if (discoveredPotion.Price != totalPrice) // Only update if it's different
                 {
                     discoveredPotion.Price = totalPrice;
-                    // Mark as modified if it's not automatically tracked, though for an entity retrieved by FirstOrDefaultAsync,
-                    // EF typically tracks changes automatically. Explicitly setting it ensures it.
                     db.Entry(discoveredPotion).State = EntityState.Modified;
                 }
             }
@@ -168,9 +160,6 @@ namespace TheRustyCauldron_PFG.Controllers
                                                     .Where(pi => pi.PotionId == discoveredPotion.Id)
                                                     .ToListAsync();
             db.PotionIngredients.RemoveRange(existingPotionIngredients);
-            // No need for SaveChanges here if the next SaveChanges will cover it.
-            // But if you're sure you want to commit deletion immediately, keep it.
-            // For robustness, I'll keep it as a separate save.
             await db.SaveChangesAsync(); // Save changes to remove existing links
 
             foreach (var ingredient in selectedIngredientsFromDb) // Use ingredients fetched from DB
@@ -181,8 +170,6 @@ namespace TheRustyCauldron_PFG.Controllers
                     IngredientId = ingredient.Id
                 });
             }
-            // THIS SAVE CHANGES will also persist the price update for existing potions
-            // if you added 'db.Entry(discoveredPotion).State = EntityState.Modified;' above.
             await db.SaveChangesAsync(); // Save the new linking entries and any updated Potion price.
 
             if (User.Identity.IsAuthenticated)

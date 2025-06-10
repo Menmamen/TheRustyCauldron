@@ -12,7 +12,5 @@ namespace TheRustyCauldron_PFG.Models
         public virtual Potion Potion { get; set; }
         public virtual Ingredient Ingredient { get; set; }
 
-        // You could add Quantity here if a potion can have multiple of the same ingredient
-        // public int Quantity { get; set; }
     }
 }

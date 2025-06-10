@@ -1,21 +1,17 @@
-﻿/* Add or update these styles in your Site.css or this file's <style> block */
-
-/* Cauldron Container - MUST be relative for child absolute positioning */
-.cauldron-animation-container {
-    position: relative; /* Key for positioning buttons over it */
-    width: 100%; /* Or set a specific max-width if desired */
-    max-width: 600px; /* Example: adjust as needed */
-    margin: 20px auto; /* Center the cauldron horizontally */
-    display: block; /* Ensure it takes up its own space */
+﻿.cauldron-animation-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
 }
 
-/* Styles for cauldron and spoon images */
 .cauldron-image {
-    display: block; /* Remove extra space below image */
+    display: block;
     width: 100%;
     height: auto;
     z-index: 3;
-    position: relative; /* Ensure it's rendered below buttons if buttons have higher z-index */
+    position: relative;
 }
 
 .stirring-spoon {
@@ -25,94 +21,77 @@
     transform: translate(-50%, -50%) rotate(0deg);
     width: 70%;
     height: auto;
-    /* opacity: 0; <--- REMOVED THIS LINE */
     transition: opacity 0.3s ease-in-out;
-    z-index: 2; /* Spoon on top of cauldron */
-    transform-origin: 50% 90%; /* Pivot point for rotation */
+    z-index: 2;
+    transform-origin: 50% 90%;
 }
 
-/* Container for the buttons */
 .cauldron-buttons-overlay {
-    position: absolute; /* Position over the cauldron container */
-    bottom: 5%; /* Adjust vertical position */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Fine-tune horizontal centering */
-    z-index: 3; /* Ensure buttons are on top of cauldron and spoon */
-    display: flex; /* Use flexbox for button alignment */
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center buttons horizontally within the overlay */
-    width: 100%; /* Allow buttons to use available width for centering */
-}
-/* Container for the buttons */
-.cauldron-buttons-overlay {
-    position: absolute; /* Position over the cauldron container */
-    bottom: 5%; /* Adjust vertical position */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Fine-tune horizontal centering */
-    z-index: 3; /* Ensure buttons are on top of cauldron and spoon */
-    display: flex; /* Use flexbox for button alignment */
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center buttons horizontally within the overlay */
-    width: 100%; /* Allow buttons to use available width for centering */
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-    /* Styling for the buttons on the cauldron page - MATCHING INGREDIENT CARD BUTTONS */
-    /* Apply .btn-primary styles directly or create a new class for consistency */
-    .cauldron-buttons-overlay .btn { /* Target buttons within the overlay */
-        background-color: #3d2d1d; /* From .card-body .btn-primary */
-        border-color: #2d1d0d; /* From .card-body .btn-primary */
-        color: #eee8d5; /* From .card-body .btn-primary */
-        font-family: 'Marcellus', serif; /* From .card-body .btn-primary */
-        font-size: 1.1rem; /* Adjust font size to match ingredient card buttons if needed */
-        padding: 8px 20px; /* Adjust padding to match ingredient card buttons if needed */
-        margin-bottom: 10px; /* Space between buttons */
-        border-radius: 5px; /* Consistent border radius */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Consistent shadow */
-        transition: all 0.3s ease; /* Smooth transitions */
-        min-width: 180px; /* Ensure consistent width for buttons */
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Consistent text shadow */
+    .cauldron-buttons-overlay .btn {
+        background-color: #3d2d1d;
+        border-color: #2d1d0d;
+        color: #eee8d5;
+        font-family: 'Marcellus', serif;
+        font-size: 1.1rem;
+        padding: 8px 20px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        min-width: 180px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
 
         .cauldron-buttons-overlay .btn:hover {
-            background-color: #5a4b3d; /* From .card-body .btn-primary:hover */
-            border-color: #3d2d1d; /* From .card-body .btn-primary:hover */
-            color: #fff; /* From .card-body .btn-primary:hover */
-            transform: translateY(-2px); /* Slight lift effect on hover */
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+            background-color: #5a4b3d;
+            border-color: #3d2d1d;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
         }
 
-/* Styling for the buttons */
 .btn-magic-brew {
-    background-color: #28a745; /* Darker green */
+    background-color: #28a745;
     color: #fff;
-    border: 2px solid #1e7e34; /* Darker border */
-    font-size: 1.25rem; /* Larger font */
+    border: 2px solid #1e7e34;
+    font-size: 1.25rem;
     padding: 10px 25px;
-    margin-bottom: 10px; /* Space between buttons */
-    border-radius: 5px; /* Slightly rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    transition: all 0.3s ease; /* Smooth transitions */
-    min-width: 200px; /* Ensure consistent width for buttons */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Text shadow for better readability */
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
     .btn-magic-brew:hover {
-        background-color: #218838; /* Darker on hover */
+        background-color: #218838;
         border-color: #1c7430;
-        transform: translateY(-2px); /* Slight lift effect */
+        transform: translateY(-2px);
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
     }
 
 .btn-magic-empty {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545;
     color: #fff;
-    border: 2px solid #c82333; /* Darker border */
-    font-size: 1.1rem; /* Slightly smaller than brew */
+    border: 2px solid #c82333;
+    font-size: 1.1rem;
     padding: 8px 20px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    min-width: 180px; /* Consistent width */
+    min-width: 180px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
@@ -123,7 +102,6 @@
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
     }
 
-/* Keyframes for stirring animation - remains the same */
 @keyframes stir {
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -147,51 +125,41 @@
 }
 
 .stirring-animation {
-    animation: stir 1s infinite alternate; /* Adjust duration and iteration as needed */
+    animation: stir 1s infinite alternate;
 }
 
-/* --- The rest of your existing CSS --- */
-
-/* Set padding to keep content from hitting the edges */
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-    will truncate terms that are too long to fit in the left column 
-*/
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
 
-/* Styles for Image Hover/Zoom Effect */
 .ingredient-image {
-    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom */
+    transition: transform 0.3s ease-in-out;
 }
 
 .zoomed-image {
-    transform: scale(1.1); /* Zooms the image to 110% of its size */
-    position: relative; /* Ensures z-index works */
-    z-index: 10; /* Brings the zoomed image to the front, above siblings */
+    transform: scale(1.1);
+    position: relative;
+    z-index: 10;
 }
 
-/* Ensure html and body take full viewport height */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-/* General Body Styles */
 body {
     background-image: url('/Content/img/identity/bg6.jpg');
     background-repeat: no-repeat;
@@ -204,32 +172,28 @@ body {
     color: #eee8d5;
 }
 
-/* Fixed 'sign' Styling */
 .sign {
     position: fixed;
-    top: -30px; /* Keep its offset position */
+    top: -30px;
     left: -20px;
-    z-index: 1000; /* Stays on top of everything, including the navbar */
+    z-index: 1000;
     padding: 10px;
 }
 
     .sign img {
-        height: 250px; /* Adjust height of the sign image */
+        height: 250px;
         width: auto;
         display: block;
         margin: 0;
         padding: 0;
     }
 
-
-/* NAVBAR STYLES: Make it fixed at the top */
 .navbar {
-    position: fixed; /* Makes the navbar stay at the top */
-    top: 0; /* Aligns to the very top edge of the viewport */
-    left: 0; /* Aligns to the very left edge */
-    right: 0; /* Extends to the very right edge */
-    z-index: 990; /* Place it just below the 'sign' if they overlap */
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 990;
     background-image: url('/Content/img/identity/wood.png');
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -238,37 +202,28 @@ body {
     align-items: center;
 }
 
-
-/* CONTENT ADJUSTMENT: Push main content down below the fixed navbar */
 .container.body-content {
-    padding-top: 60px; /* Adjust this value to match your navbar's height */
+    padding-top: 60px;
 }
 
-
-/* Navbar Link Styles */
 .navbar-nav .nav-link {
     font-family: 'Marcellus', serif;
-    color: #eee8d5 !important; /* Pale Goldenrod fill color, override Bootstrap */
-    text-shadow: -1px -1px 0 #3d2d1d, /* Dark outline from headings */
-    1px -1px 0 #3d2d1d, -1px 1px 0 #3d2d1d, 1px 1px 0 #3d2d1d;
+    color: #eee8d5 !important;
+    text-shadow: -1px -1px 0 #3d2d1d, 1px -1px 0 #3d2d1d, -1px 1px 0 #3d2d1d, 1px 1px 0 #3d2d1d;
     font-size: 1.125rem;
 }
 
-    /* Styles for hover and focus states of navbar links (THIS IS THE GLOW) */
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link:focus {
-        color: #fcf5e9 !important; /* A slightly brighter Pale Goldenrod on hover/focus */
-        text-shadow: -1px -1px 0 #2d1d0d, /* Slightly darker outline on hover */
-        1px -1px 0 #2d1d0d, -1px 1px 0 #2d1d0d, 1px 1px 0 #2d1d0d, 0 0 5px rgba(255, 255, 255, 0.3); /* Subtle glow for hover/focus (adjust opacity or blur for intensity) */
+        color: #fcf5e9 !important;
+        text-shadow: -1px -1px 0 #2d1d0d, 1px -1px 0 #2d1d0d, -1px 1px 0 #2d1d0d, 1px 1px 0 #2d1d0d, 0 0 5px rgba(255, 255, 255, 0.3);
     }
 
-    /* Style for the active (current) navbar link */
     .navbar-nav .nav-link.active {
-        color: #fcf5e9 !important; /* Brighter for active link */
-        text-shadow: -1px -1px 0 #2d1d0d, 1px -1px 0 #2d1d0d, -1px 1px 0 #2d1d0d, 1px 1px 0 #2d1d0d, 0 0 8px rgba(255, 255, 255, 0.5); /* Stronger glow for active */
+        color: #fcf5e9 !important;
+        text-shadow: -1px -1px 0 #2d1d0d, 1px -1px 0 #2d1d0d, -1px 1px 0 #2d1d0d, 1px 1px 0 #2d1d0d, 0 0 8px rgba(255, 255, 255, 0.5);
     }
 
-/* Heading Styles (Marcellus font, Pale Goldenrod fill, Hard Outline with text-shadow) */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Marcellus', serif;
     color: #eee8d5;
@@ -299,24 +254,19 @@ h6 {
     font-size: 1.25rem;
 }
 
-/* Specific Stroked Text Class */
 .stroked-text {
     color: #eee8d5;
     -webkit-text-stroke: 1px #3d2d1d;
     text-stroke: 1px #3d2d1d;
 }
-/*
---- Specific Styles for Single Bottle Card Display ---
-These styles apply the .card look to the container for the single
-selected bottle image.
-*/
+
 .selected-bottle-card-container {
-    max-width: 220px; /* Limit the width of the bottle card for a compact look */
-    margin: 0 auto; /* Center the card horizontally */
+    max-width: 220px;
+    margin: 0 auto;
 }
 
     .selected-bottle-card-container .card-body {
-        padding: 15px; /* Adjust padding inside the single bottle card body */
+        padding: 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -324,25 +274,23 @@ selected bottle image.
     }
 
 .selected-bottle-image-display {
-    height: 180px; /* Make the displayed bottle image significantly bigger */
+    height: 180px;
     width: auto;
     object-fit: contain;
     display: block;
-    margin: 0 auto; /* Center the image */
-    padding: 5px; /* Padding inside the card-body for the image */
-    transition: transform 0.2s ease-in-out; /* Smooth transition for image changes */
+    margin: 0 auto;
+    padding: 5px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .selected-bottle-card-container .card-title {
-    margin-bottom: 0; /* Remove default margin */
-    margin-top: 10px; /* Space between image and title */
-    font-size: 1.2rem; /* Make the title a bit more prominent for the single bottle */
-    color: #3d2d1d !important; /* Ensure color matches your theme */
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #3d2d1d !important;
     text-shadow: none;
 }
 
-
-/* --- General Card Styles (for ingredients and selected bottle card) --- */
 .card {
     position: relative;
     overflow: hidden;
@@ -368,8 +316,8 @@ selected bottle image.
     }
 
 .card-body {
-    padding-top: 15px; /* Adjusted to 15px for general cards for better consistency */
-    padding-bottom: 15px; /* Added for general cards */
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     background-color: transparent !important;
     position: relative;
@@ -380,8 +328,8 @@ selected bottle image.
         font-family: 'Marcellus', serif;
         color: #3d2d1d !important;
         text-shadow: none;
-        margin-bottom: 0.5rem; /* Adjusted for general cards */
-        font-size: 1.1rem; /* Adjusted for general cards */
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
     }
 
     .card-body .card-text {
@@ -424,8 +372,6 @@ selected bottle image.
     padding: 5px;
 }
 
-
-/* --- Button Styles --- */
 .btn-danger {
     background-color: #dc3545;
     border-color: #dc3545;
@@ -455,7 +401,7 @@ selected bottle image.
 .btn-warning {
     background-color: #ffc107;
     border-color: #ffc107;
-    color: #3d2d1d; /* Changed to dark text for contrast on warning button */
+    color: #3d2d1d;
     font-family: 'Marcellus', serif;
 }
 
@@ -477,7 +423,6 @@ selected bottle image.
     padding: 0.25rem 0.5rem;
 }
 
-/* --- Bootstrap Overrides for Select --- */
 .form-control {
     background-color: rgba(61, 45, 29, 0.8);
     color: #eee8d5;
@@ -495,24 +440,23 @@ selected bottle image.
         color: #eee8d5;
     }
 
-/* --- Cauldron Summary & Bottle Selection Layout --- */
 .cauldron-summary {
-    margin-top: 0; /* Reset top margin as it's now in a flex column */
+    margin-top: 0;
     padding-top: 1.5rem;
-    min-height: 100%; /* Ensures it fills the height of its column */
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-    align-items: center; /* Center horizontally */
-    border: 1px solid #3d2d1d; /* Assuming this is part of the card-like appearance */
-    border-radius: 8px; /* Match card border-radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Match card shadow */
-    background-color: transparent !important; /* Match card background */
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #3d2d1d;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: transparent !important;
     position: relative;
     z-index: 0;
 }
 
-    .cauldron-summary::before { /* Add parchment background to summary */
+    .cauldron-summary::before {
         content: "";
         position: absolute;
         top: 0;
@@ -525,24 +469,19 @@ selected bottle image.
         background-repeat: no-repeat;
         z-index: -1;
         opacity: 0.9;
-        border-radius: inherit; /* Inherit border-radius from parent */
+        border-radius: inherit;
     }
 
     .cauldron-summary p {
-        color: #3d2d1d; /* Text color for summary */
+        color: #3d2d1d;
         font-family: 'Marcellus', serif;
         font-size: 1.1rem;
         text-shadow: none;
     }
 
     .cauldron-summary strong {
-        color: #d4af37 !important; /* Highlight strong values */
+        color: #d4af37 !important;
     }
-
-
-/* --- Cauldron Animation Container (Left 2/3) --- */
-/* This section has the spoon opacity corrected */
-
 
 .bottom-decoration-image {
     max-width: 80%;
@@ -550,10 +489,9 @@ selected bottle image.
     display: inline-block;
 }
 
-/* --- Bottle Selection Specifics --- */
 .bottle-selection-container {
     padding: 15px;
-    margin-bottom: 20px; /* Space between bottle choices and buttons */
+    margin-bottom: 20px;
 }
 
     .bottle-selection-container h5 {
@@ -564,31 +502,31 @@ selected bottle image.
     }
 
 .bottle-option-col {
-    display: flex; /* For centering content within the column */
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px; /* Space between bottle rows if they wrap */
+    margin-bottom: 10px;
 }
 
 .bottle-option {
-    display: block; /* Make the label take full width for easier clicking */
+    display: block;
     cursor: pointer;
-    border: 3px solid transparent; /* Initial border */
+    border: 3px solid transparent;
     border-radius: 8px;
-    overflow: hidden; /* Ensure image corners respect border-radius */
+    overflow: hidden;
     transition: all 0.2s ease-in-out;
-    padding: 5px; /* Padding inside the border */
-    background-color: rgba(0, 0, 0, 0.2); /* Slight background for options */
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
     .bottle-option:hover {
-        border-color: #f7d794; /* Light border on hover */
+        border-color: #f7d794;
     }
 
     .bottle-option.selected {
-        border-color: #d4af37; /* Gold border for selected bottle */
-        box-shadow: 0 0 15px rgba(212, 175, 55, 0.7); /* Glow effect */
-        background-color: rgba(0, 0, 0, 0.4); /* Darker background for selected */
+        border-color: #d4af37;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+        background-color: rgba(0, 0, 0, 0.4);
     }
 
 .bottle-image {
@@ -601,12 +539,9 @@ selected bottle image.
 }
 
 .bottle-radio {
-    display: none; /* Hide the actual radio button */
+    display: none;
 }
 
-
-/* GLOBAL BUTTON OVERRIDES (Using !important) */
-/* This targets general Bootstrap buttons and links styled as buttons. */
 button.btn,
 a.btn,
 input[type="submit"].btn,
@@ -619,17 +554,16 @@ input[type="button"].btn {
     padding: 8px 20px !important;
     border-radius: 5px !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
-    transition: all 0.3s ease !important; /* Transition property itself doesn't need !important unless it's being overridden */
+    transition: all 0.3s ease !important;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
     text-decoration: none !important;
-    display: inline-block !important; /* Ensure they behave like block elements for width/padding */
+    display: inline-block !important;
     vertical-align: middle !important;
     cursor: pointer !important;
     user-select: none !important;
     white-space: nowrap !important;
 }
 
-    /* Hover state for all .btn elements */
     button.btn:hover,
     a.btn:hover,
     input[type="submit"].btn:hover,
@@ -642,7 +576,6 @@ input[type="button"].btn {
         text-decoration: none !important;
     }
 
-    /* Active/Click state for all .btn elements */
     button.btn:active,
     a.btn:active,
     input[type="submit"].btn:active,
@@ -653,8 +586,6 @@ input[type="button"].btn {
         box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) !important;
     }
 
-/* Specific overrides for Bootstrap's built-in button colors */
-/* These will ensure your btn-primary, btn-danger, etc., keep their intended colors */
 .btn-primary {
     background-color: #3d2d1d !important;
     border-color: #2d1d0d !important;
@@ -690,7 +621,7 @@ input[type="button"].btn {
 .btn-warning {
     background-color: #ffc107 !important;
     border-color: #ffc107 !important;
-    color: #3d2d1d !important; /* Changed to dark text for contrast on warning button */
+    color: #3d2d1d !important;
 }
 
     .btn-warning:hover {
@@ -699,8 +630,6 @@ input[type="button"].btn {
         color: #3d2d1d !important;
     }
 
-
-/* This would target any <a> tag directly inside a <dd> element */
 dd > a, p > a {
     background-color: #3d2d1d !important;
     border-color: #2d1d0d !important;
@@ -736,7 +665,6 @@ dd > a, p > a {
         box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3) !important;
     }
 
-/* Styles for the Parchment Table Background */
 .table-parchment {
     position: relative;
     overflow: hidden;
@@ -762,44 +690,37 @@ dd > a, p > a {
         border-radius: inherit;
     }
 
-    /* Adjust table content colors and backgrounds for readability on the parchment background */
     .table-parchment th,
     .table-parchment td {
-        color: #3d2d1d !important; /* Dark text color for readability */
-        border-color: #5a4b3d !important; /* Slightly lighter border for table lines */
-        background-color: transparent !important; /* <<< ADD THIS LINE for cells >>> */
+        color: #3d2d1d !important;
+        border-color: #5a4b3d !important;
+        background-color: transparent !important;
     }
 
-    /* Optional: Also make table rows transparent if needed, though th/td often suffice */
     .table-parchment tr {
-        background-color: transparent !important; /* <<< ADD THIS LINE for rows >>> */
+        background-color: transparent !important;
     }
 
     .table-parchment thead th {
-        border-bottom: 2px solid #3d2d1d !important; /* Stronger line under header */
+        border-bottom: 2px solid #3d2d1d !important;
     }
 
-    /* Optional: Subtle stripe on odd rows for readability */
     .table-parchment tbody tr:nth-of-type(odd) {
-        /* If you want stripes, you'll need to decide if they should be opaque or semi-transparent. */
-        /* If transparent: background-color: rgba(0, 0, 0, 0.03) !important; */
-        /* If you want the stripe to be a solid color on top of parchment, keep the rgba as is */
         background-color: rgba(0, 0, 0, 0.03) !important;
     }
 
-/* Styles for the Order Details Container (Parchment Background) */
 .order-details-container {
     position: relative;
     overflow: hidden;
-    border: 1px solid #3d2d1d; /* Consistent border with other parchment elements */
-    border-radius: 8px; /* Consistent border-radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Consistent shadow */
-    background-color: transparent !important; /* Ensure background image is visible */
-    padding: 30px; /* Add some padding inside for spacing */
-    margin-bottom: 20px; /* Space below the container */
-    max-width: 600px; /* Optional: Limit width for better layout */
-    margin-left: auto; /* Center the container */
-    margin-right: auto; /* Center the container */
+    border: 1px solid #3d2d1d;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: transparent !important;
+    padding: 30px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
     .order-details-container::before {
@@ -809,46 +730,42 @@ dd > a, p > a {
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('/Content/img/identity/partchment3.jpg'); /* Your parchment image */
+        background-image: url('/Content/img/identity/partchment3.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         z-index: -1;
-        opacity: 0.9; /* Adjust opacity as needed */
-        border-radius: inherit; /* Inherit border-radius from parent */
+        opacity: 0.9;
+        border-radius: inherit;
     }
 
-    /* Adjust text and background colors for readability on parchment */
     .order-details-container h4,
     .order-details-container dt,
     .order-details-container dd {
-        color: #3d2d1d !important; /* Dark brown text for readability */
-        background-color: transparent !important; /* Ensure backgrounds are transparent */
-    }
-
-    /* Ensure the horizontal rule is visible or themed appropriately */
-    .order-details-container hr {
-        border-top: 1px solid #5a4b3d !important; /* A slightly lighter brown for the line */
+        color: #3d2d1d !important;
         background-color: transparent !important;
     }
 
-    /* If the dl-horizontal is causing issues, make its background transparent too */
+    .order-details-container hr {
+        border-top: 1px solid #5a4b3d !important;
+        background-color: transparent !important;
+    }
+
     .order-details-container .dl-horizontal {
         background-color: transparent !important;
     }
 
-/* --- Home Page Parchment Container --- */
 .home-parchment-container {
     position: relative;
     overflow: hidden;
-    border: 1px solid #3d2d1d; /* Consistent border */
-    border-radius: 8px; /* Consistent border-radius */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for main content */
+    border: 1px solid #3d2d1d;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     background-color: transparent !important;
-    padding: 30px 40px; /* Generous padding */
-    margin-top: 30px; /* Space from top */
-    margin-bottom: 30px; /* Space from bottom */
-    max-width: 1200px; /* Adjust max-width as needed for your layout */
+    padding: 30px 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -860,35 +777,32 @@ dd > a, p > a {
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('/Content/img/identity/partchment3.jpg'); /* Your parchment image */
+        background-image: url('/Content/img/identity/partchment3.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         z-index: -1;
-        opacity: 0.9; /* Adjust opacity as needed */
+        opacity: 0.9;
         border-radius: inherit;
     }
 
-    /* Ensure text inside the parchment container is readable */
     .home-parchment-container h1,
     .home-parchment-container h2,
     .home-parchment-container h4,
     .home-parchment-container p,
     .home-parchment-container strong {
-        color: #3d2d1d !important; /* Dark brown text */
-        text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.3); /* Subtle text shadow for readability */
+        color: #3d2d1d !important;
+        text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.3);
     }
 
-        /* Adjust heading styles for the sections */
         .home-parchment-container h2.section-title {
             font-family: 'Marcellus', serif;
             font-size: 2.2rem;
             margin-bottom: 20px;
         }
 
-    /* Ensure default Bootstrap links within parchment don't clash */
     .home-parchment-container a:not(.btn) {
-        color: #6a4a2a !important; /* A contrasting brown for non-button links */
+        color: #6a4a2a !important;
         text-decoration: underline !important;
     }
 
@@ -896,16 +810,15 @@ dd > a, p > a {
             color: #8c6a4a !important;
         }
 
-    /* Styling for the central logo on the Home Page */
     .home-parchment-container .logo-container {
-        padding: 10px; /* Optional: Add some padding around the logo */
-        display: flex; /* Use flexbox to center the image */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically (if container has height) */
-        min-height: 250px; /* Optional: Give it a minimum height to keep column consistent */
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 250px;
     }
 
         .home-parchment-container .logo-container img {
-            max-width: 100%; /* Ensure logo doesn't overflow */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 100%;
+            height: auto;
         }

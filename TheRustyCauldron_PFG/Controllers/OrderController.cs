@@ -1,14 +1,14 @@
-﻿using System.Linq; // Add this for .Where() and .OrderByDescending()
+﻿using System.Linq; 
 using System.Web.Mvc;
 using TheRustyCauldron_PFG.Models;
 using System.Threading.Tasks;
-using System.Data.Entity; // For async DB operations and .Include()
-using Microsoft.AspNet.Identity; // Add this for User.Identity.GetUserId()
-using System; // For DateTime.Now in SubmitOrder
+using System.Data.Entity; 
+using Microsoft.AspNet.Identity; 
+using System; 
 
 namespace TheRustyCauldron_PFG.Controllers
 {
-    [Authorize] // <--- Add this attribute here to secure all actions in this controller
+    [Authorize] 
     public class OrderController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -51,7 +51,6 @@ namespace TheRustyCauldron_PFG.Controllers
             };
 
             // Link the order to the currently logged-in user if available
-            // IMPORTANT: Ensure your Order model has a ApplicationUserId property and a foreign key!
             if (User.Identity.IsAuthenticated)
             {
                 newOrder.ApplicationUserId = User.Identity.GetUserId();

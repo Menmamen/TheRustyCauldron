@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-// REMOVE: using System.ComponentModel.DataAnnotations.Schema; // You might not need this anymore if no other [Column] attributes are used
 
 namespace TheRustyCauldron_PFG.Models
 {

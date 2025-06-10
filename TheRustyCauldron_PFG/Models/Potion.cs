@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-// REMOVE: using System.ComponentModel.DataAnnotations.Schema; // You might not need this anymore if no other [Column] attributes are used
 
 namespace TheRustyCauldron_PFG.Models
 {
@@ -16,7 +15,6 @@ namespace TheRustyCauldron_PFG.Models
         public string ImageUrl { get; set; }
         public string BottleImageUrl { get; set; }
 
-        // REMOVE THIS LINE: [Column(TypeName = "decimal(18, 2)")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Price { get; set; }
 

@@ -1,8 +1,8 @@
-﻿using System.Data.Entity; // For Entity Framework 6
+﻿using System.Data.Entity; 
 using System.Linq;
 using System.Web.Mvc;
-using System.Threading.Tasks; // For async/await if you use them with EF6
-using TheRustyCauldron_PFG.Models; // Your models
+using System.Threading.Tasks; 
+using TheRustyCauldron_PFG.Models; 
 
 namespace TheRustyCauldron_PFG.Controllers
 {
