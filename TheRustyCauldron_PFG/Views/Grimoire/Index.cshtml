@@ -66,6 +66,23 @@
                         <h5 class="card-title">@userPotionEntry.Potion.Name</h5>
                         <p class="card-text"><strong>Effect:</strong> @userPotionEntry.Potion.Effect</p>
                         <p class="card-text">@userPotionEntry.Potion.Description</p>
+
+                        @* Display Ingredients *@
+                        @if (userPotionEntry.Potion.PotionIngredients != null && userPotionEntry.Potion.PotionIngredients.Any())
+                        {
+                            <p class="card-text">
+                                <strong>Ingredients:</strong>
+                                @{
+                                    var ingredients = userPotionEntry.Potion.PotionIngredients.Select(pi => pi.Ingredient.Name);
+                                }
+                                @string.Join(", ", ingredients)
+                            </p>
+                        }
+                        else
+                        {
+                            <p class="card-text"><strong>Ingredients:</strong> No ingredients listed.</p>
+                        }
+
                         <p class="card-text">
                             <strong>Price:</strong> <span class="text-success">@userPotionEntry.Potion.Price.ToString("C")</span>
                         </p>
